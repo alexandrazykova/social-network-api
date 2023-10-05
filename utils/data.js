@@ -51,11 +51,31 @@
 
 // const thoughts = [
 //     {
-//         thoughtText: 'here is my thought1'
+//         thoughtText: 'here is my thought1',
+//         username: 'Anna',
 //     },
 //     {
-//         username: 'Anna'
+        
+//     },
+//     {
+//         thoughtText: 'here is my thought2',
+//         username: 'Alex',
+//     },
+//     {
+//         thoughtText: 'here is my thought2',
+//         username: 'Dima', 
 //     },
 // ];
 
-// module.exports = { users, reactions, thoughts }
+
+// // Get a random item given an array
+// const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+// // Gets a random full name
+// const getRandomUser = () =>
+//   `${getRandomArrItem(users)} ${getRandomArrItem(users)}`;
+
+
+
+// // Export the functions for use in seed.js
+// module.exports = { getRandomUser };
