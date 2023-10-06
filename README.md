@@ -17,6 +17,9 @@ Created using Express.js for routing, a MongoDB database, and the Mongoose ODM.
 
 ## Walkthrough Video
 
+[video1](https://drive.google.com/file/d/13d5ZPf8lXgGKQFO3bqDhjEEKpJp-uidx/view?usp=sharing)
+[video2](https://drive.google.com/file/d/1I3ZH6--oeSScvgZw2ZeMltMXkXTLIp_p/view?usp=sharing)
+
 ## Questions?
 
 Reach out https://github.com/alexandrazykova
