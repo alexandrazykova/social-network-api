@@ -27,10 +27,14 @@ module.exports = {
         }
     },
     // Create a thought
+    //POST to create a new thought (don't forget to push the created 
+    // thought's _id to the associated user's thoughts array field)
     async createThought(req, res) {
         try {
-            const thought = await Thought.create(req.body);
+            const thought = await Thought.create(req.body)
+            .populate('thoughts')
             res.json(thought);
+
         } catch (err) {
             console.log(err);
             return res.status(500).json(err);
