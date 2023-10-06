@@ -27,19 +27,16 @@ module.exports = {
         }
     },
     // Create a thought
-    //POST to create a new thought (don't forget to push the created 
-    // thought's _id to the associated user's thoughts array field)
     async createThought(req, res) {
         try {
             const thought = await Thought.create(req.body)
 
             const user = await User.findOneAndUpdate(
-                { _id: req.body.id},
-                { $addToSet: {thoughts: thought } },
-                { new: true}
-
+                { _id: req.body.id },
+                { $addToSet: { thoughts: thought } },
+                { new: true }
             )
-        
+
             res.json(user);
 
         } catch (err) {
