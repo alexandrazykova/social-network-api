@@ -32,8 +32,15 @@ module.exports = {
     async createThought(req, res) {
         try {
             const thought = await Thought.create(req.body)
-            .populate('thoughts')
-            res.json(thought);
+
+            const user = await User.findOneAndUpdate(
+                { _id: req.body.id},
+                { $addToSet: {thoughts: thought } },
+                { new: true}
+
+            )
+        
+            res.json(user);
 
         } catch (err) {
             console.log(err);
@@ -107,9 +114,9 @@ module.exports = {
     async removeReaction(req, res) {
         try {
             const thought = await Thought.findOneAndUpdate(
-                { id: req.params.thoughtId },
-                { $pull: { reactions: { _id: req.body } } },
-                {new: true }
+                { _id: req.params.thoughtId },
+                { $pull: { reactions: { _id: req.params.reactionId } } },
+                { new: true }
             );
 
             if (!thought) {
