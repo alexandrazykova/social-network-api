@@ -1,4 +1,4 @@
 const formatDate = (date) => {
-    return date.toLocaleString()
+    return date.getUTCDay()
 }
 module.exports = formatDate
